@@ -1,0 +1,16 @@
+all: hello
+
+hello: main.obj factorial.obj hello.obj
+	cl main.obj factorial.obj hello.obj /Fe: hello
+
+main.obj: main.cpp
+	cl /c main.cpp
+
+factorial.obj: factorial.cpp
+	cl /c factorial.cpp
+
+hello.obj: hello.cpp
+	cl /c hello.cpp
+
+clean:
+	del *.obj hello
